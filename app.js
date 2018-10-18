@@ -1,7 +1,17 @@
 const vm = new Vue({
   el: 'main',
   data: {
-    conectado: false,
-    edad: 44,
+    laborales: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    tareas: [
+      {nombre: 'Hacer la compra', prioridad: 'baja'},
+      {nombre: 'Aprender Vue y Firebase', prioridad: 'alta'},
+      {nombre: 'Ir al gimnasio', prioridad: 'alta'},
+    ],
+
+    persona: {
+      nombre: 'David',
+      profesion: 'dev',
+      ciudad: 'Bogota'
+    }
   },
 });
