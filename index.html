@@ -8,8 +8,8 @@
     <main>
 
       <ul>
-        <li v-for="tarea in tareas">
-          {{ tarea }}
+        <li v-for="tarea in tareasConPrioridad">
+          {{ tarea.titulo }}
         </li>
       </ul>
       <form v-on:submit.prevent="agregarTarea">
