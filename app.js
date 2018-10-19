@@ -1,13 +1,20 @@
 new Vue({
   el: 'main',
-  data: {
-    mostrar: true,
-    mensajes: {
-      transicion: 'Transiciones CSS con Vue.js',
-      animacion: 'Animaciones CSS con Vue.js',
-      animationCustom: 'Animaciones custom CSS con Vue.js',
-      entreElementos: 'Transiciones entre elementos con Vue.js'
-    }
+  mounted() {
+    this.cargarPersonas();
   },
+
+  data: {
+    personas: []
+  },
+
+  methods: {
+    cargarPersonas() {
+      this.$http.get('https://randomuser.me/api/?results=500')
+        .then((respuesta) => {
+          this.personas = respuesta.body.results;
+        });
+    }
+  }
 
 });
