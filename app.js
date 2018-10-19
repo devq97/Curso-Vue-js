@@ -1,25 +1,13 @@
 new Vue({
   el: 'main',
   data: {
-    tareas: [
-      {titulo: 'Hacer la compra', completado: false},
-      {titulo: 'Aprender Vue.js', completado: false},
-      {titulo: 'Aprender Firebase', completado: false},
-      {titulo: 'Dominar ES6', completado: false},
-      {titulo: 'Salir a correr', completado: false},
-    ]
-  },
-
-  methods: {
-    completarTarea(tarea) {
-      tarea.completado = !tarea.completado;
+    mostrar: true,
+    mensajes: {
+      transicion: 'Transiciones CSS con Vue.js',
+      animacion: 'Animaciones CSS con Vue.js',
+      animationCustom: 'Animaciones custom CSS con Vue.js',
+      entreElementos: 'Transiciones entre elementos con Vue.js'
     }
   },
-
-  computed: {
-    tareasCompletadas() {
-      return this.tareas.filter((tarea) => tarea.completado);
-    }
-  }
 
 });
