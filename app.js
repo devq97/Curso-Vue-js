@@ -1,36 +1,25 @@
-const vm1 = new Vue({
+new Vue({
   el: 'main',
   data: {
-    mensaje: 'Instancia Vue 1',
-  },
-
-  beforeUpdate() {
-    console.log('beforeUpdate: ', this.mensaje);
-  },
-
-  updated() {
-    console.log('Update: ', this.mensaje);
+    tareas: [
+      {titulo: 'Hacer la compra', completado: false},
+      {titulo: 'Aprender Vue.js', completado: false},
+      {titulo: 'Aprender Firebase', completado: false},
+      {titulo: 'Dominar ES6', completado: false},
+      {titulo: 'Salir a correr', completado: false},
+    ]
   },
 
   methods: {
-
-    alReves() {
-      this.mensaje = this.mensaje.split('').reverse().join('');
+    completarTarea(tarea) {
+      tarea.completado = !tarea.completado;
     }
-
   },
 
   computed: {
-    mensajeMayusculas() {
-      return this.mensaje.toUpperCase();
+    tareasCompletadas() {
+      return this.tareas.filter((tarea) => tarea.completado);
     }
   }
 
-});
-
-const vm2 = new Vue({
-  el: '#app',
-  data: {
-    mensaje: 'Instancia Vue 2',
-  }
 });

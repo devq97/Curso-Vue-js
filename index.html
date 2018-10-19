@@ -3,19 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Curso VUE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style >
+      li {
+        cursor: pointer;
+      }
+
+      .completado {
+        text-decoration: line-through;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <h1 v-text="mensaje"></h1>
-      <button @click="alReves">Al revés</button>
+      <h1>Tareas</h1>
+      <h1>{{ tareasCompletadas.length }} Completadas.</h1>
+      <ul>
+        <li
+          v-bind:class="{completado: tarea.completado}"
+          v-on:click="completarTarea(tarea)"
+          v-for="tarea in tareas">
+          {{ tarea.titulo }}
+        </li>
+      </ul>
 
       <pre>{{ $data }}</pre>
     </main>
-
-    <div id="app">
-      <h1>{{ mensaje }}</h1>
-    </div>
-
     <script src="vue.js"></script>
     <script src="app.js"></script>
   </body>
